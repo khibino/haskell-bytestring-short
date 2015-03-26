@@ -1,4 +1,3 @@
-
 name:                bytestring-short
 version:             0.0.1.0
 synopsis:            Backport copy of ShortByteString
@@ -58,3 +57,12 @@ test-suite prop-compiled
   default-language: Haskell98
   c-sources:        cbits/short_fpstring.c
   include-dirs:     include
+
+
+source-repository head
+  type:       git
+  location:   https://github.com/khibino/haskell-bytestring-short
+
+source-repository head
+  type:       mercurial
+  location:   https://bitbucket.org/khibino/haskell-bytestring-short
