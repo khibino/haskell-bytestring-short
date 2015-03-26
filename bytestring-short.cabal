@@ -1,13 +1,16 @@
 
 name:                bytestring-short
 version:             0.0.1.0
--- synopsis:
--- description:
+synopsis:            Backport copy of ShortByteString
+description:         Backport copy of ShortByteString
 license:             BSD3
 license-file:        LICENSE
-author:              Kei HIBINO
-maintainer:          ex8k.hibino@gmail.com
--- copyright:
+author:              Kei Hibino
+maintainer:          Kei Hibino <ex8k.hibino@gmail.com>
+copyright:           Copyright (c) Don Stewart          2005-2009,
+                               (c) Duncan Coutts        2006-2013,
+                               (c) David Roundy         2003-2005,
+                               (c) Kei Hibino           2015.
 category:            Text
 build-type:          Simple
 -- extra-source-files:
