@@ -72,18 +72,15 @@ test-suite prop-compiled
   hs-source-dirs:      tests
   default-language:    Haskell98
 
-  if flag(use-backport)
-    type:              exitcode-stdio-1.0
-    hs-source-dirs:    tests
-    main-is:           Properties.hs
-    build-depends:     base <5, bytestring-short, bytestring,
+  type:                exitcode-stdio-1.0
+  main-is:             Properties.hs
+  build-depends:       base <5, bytestring-short, bytestring,
                        QuickCheck >=2
-    c-sources:         cbits/short_fpstring.c
-    include-dirs:      include
-  else
-    type:              exitcode-stdio-1.0
-    main-is:           TT.hs
-    build-depends:     base <5
+  c-sources:           cbits/short_fpstring.c
+  include-dirs:        include
+
+  if !flag(use-backport)
+    buildable:         False
 
 source-repository head
   type:       git
