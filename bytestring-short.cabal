@@ -62,8 +62,7 @@ library
   hs-source-dirs:      compat
   default-language:    Haskell98
 
-  ghc-options:
-                       -Wall
+  ghc-options:         -Wall
 
   c-sources:           cbits/short_fpstring.c
   include-dirs:        include
