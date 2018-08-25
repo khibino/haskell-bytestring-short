@@ -58,32 +58,32 @@ library
                          , bytestring >=0.10.4
 
   hs-source-dirs:      compat
-  default-language: Haskell98
+  default-language:    Haskell98
 
   ghc-options:
                        -Wall
 
-  c-sources:         cbits/short_fpstring.c
-  include-dirs:      include
-  includes:          short_fpstring.h
-  install-includes:  short_fpstring.h
+  c-sources:           cbits/short_fpstring.c
+  include-dirs:        include
+  includes:            short_fpstring.h
+  install-includes:    short_fpstring.h
 
 test-suite prop-compiled
-  hs-source-dirs:   tests
-  default-language: Haskell98
+  hs-source-dirs:      tests
+  default-language:    Haskell98
 
   if flag(use-backport)
-    type:             exitcode-stdio-1.0
-    hs-source-dirs:   tests
-    main-is:          Properties.hs
-    build-depends:    base <5, bytestring-short, bytestring,
-                      QuickCheck >=2
-    c-sources:        cbits/short_fpstring.c
-    include-dirs:     include
+    type:              exitcode-stdio-1.0
+    hs-source-dirs:    tests
+    main-is:           Properties.hs
+    build-depends:     base <5, bytestring-short, bytestring,
+                       QuickCheck >=2
+    c-sources:         cbits/short_fpstring.c
+    include-dirs:      include
   else
-    type:             exitcode-stdio-1.0
-    main-is:          TT.hs
-    build-depends:    base <5
+    type:              exitcode-stdio-1.0
+    main-is:           TT.hs
+    build-depends:     base <5
 
 source-repository head
   type:       git
