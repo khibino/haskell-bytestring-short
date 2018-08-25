@@ -1,7 +1,7 @@
 name:                bytestring-short
 version:             0.1.0.0
 synopsis:            Backport copy of ShortByteString
-description:         Backport copy of ShortByteString
+description:         This package provides the backport copy of ShortByteString
 license:             BSD3
 license-file:        LICENSE
 author:              Kei Hibino
