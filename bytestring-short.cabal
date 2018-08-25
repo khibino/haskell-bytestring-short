@@ -18,6 +18,8 @@ tested-with:           GHC == 7.10.1, GHC == 7.10.2, GHC == 7.10.3
                      , GHC == 7.8.1, GHC == 7.8.2, GHC == 7.8.3, GHC == 7.8.4
                      , GHC == 7.6.1, GHC == 7.6.2, GHC == 7.6.3
                      , GHC == 7.4.1, GHC == 7.4.2
+extra-source-files:
+                     tests/Properties.hs
 
 flag use-backport
   description: If true, use backport implementation, otherwize use bytestring 0.10.4 or newer.
@@ -69,18 +71,22 @@ library
   install-includes:    short_fpstring.h
 
 test-suite prop-compiled
+
+  if flag(use-backport)
+    type:              exitcode-stdio-1.0
+    main-is:           Properties.hs
+    build-depends:     base <5, bytestring-short, bytestring,
+                       QuickCheck >=2
+    c-sources:         cbits/short_fpstring.c
+    include-dirs:      include
+
+  else
+    type:              exitcode-stdio-1.0
+    main-is:           TT.hs
+    build-depends:     base <5
+
   hs-source-dirs:      tests
   default-language:    Haskell98
-
-  type:                exitcode-stdio-1.0
-  main-is:             Properties.hs
-  build-depends:       base <5, bytestring-short, bytestring,
-                       QuickCheck >=2
-  c-sources:           cbits/short_fpstring.c
-  include-dirs:        include
-
-  if !flag(use-backport)
-    buildable:         False
 
 source-repository head
   type:       git
