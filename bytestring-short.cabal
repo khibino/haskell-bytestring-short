@@ -58,12 +58,10 @@ library
                          , bytestring >=0.10.4
 
   hs-source-dirs:      compat
-  default-language:    Haskell2010
+  default-language: Haskell98
 
   ghc-options:
                        -Wall
-
-  default-language: Haskell98
 
   c-sources:         cbits/short_fpstring.c
   include-dirs:      include
