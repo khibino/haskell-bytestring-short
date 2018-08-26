@@ -1,5 +1,5 @@
 name:                bytestring-short
-version:             0.1.0.1
+version:             0.1.0.2
 synopsis:            Backport copy of ShortByteString
 description:         This package provides the backport copy of ShortByteString
 license:             BSD3
